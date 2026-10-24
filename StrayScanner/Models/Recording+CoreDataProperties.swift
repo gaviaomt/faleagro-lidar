@@ -23,6 +23,17 @@ extension Recording {
     @NSManaged public var id: UUID?
     @NSManaged public var rgbFilePath: String?
     @NSManaged public var depthFilePath: String?
+    @NSManaged public var fazenda: String?
+    @NSManaged public var talhao: String?
+    @NSManaged public var variedade: String?
+    @NSManaged public var dataPlantio: Date?
+    @NSManaged public var tratamento: String?
+    @NSManaged public var pontoAmostral: Int16
+    @NSManaged public var modalidade: String?
+    @NSManaged public var metricsSummary: String?
+    @NSManaged public var metricsJSON: String?
+    @NSManaged public var confidenceScore: Double
+    @NSManaged public var escalaConfirmada: Bool
 
     func directoryPath() -> URL? {
         if let path = self.rgbFilePath {

@@ -54,6 +54,14 @@ The `odometry.csv` file contains the camera pose and intrinsics for each frame. 
 
 The `distortion/` directory contains per-frame lens distortion lookup tables, present only when the device exposes calibration data. Each `.bin` file is a raw array of little-endian `float32` values mapping radial distance from the distortion center to a correction factor. The number of entries is `file_size_in_bytes / 4`. The filenames correspond to the `frame` field in `odometry.csv`.
 
+FaleAgro LiDAR keeps this raw capture and adds three files in the same folder:
+
+- `identificacao.json`: farm tags entered before recording (fazenda, talhão, variedade, planting date, tratamento, sample point, modality A/B/C, and whether a scale reference was manually checked).
+- `metricas.json`: on-device canopy-structure metrics, a confidence score for each one, and the limitations. This is not biomass and it is not calibrated.
+- `nuvem.ply`: binary little-endian point cloud in meters, Y up, origin at the ARKit session start. It is a structural cloud, not individual leaves.
+
+Modality A (upward) reports canopy opening and a closure index. Modality C (downward) reports vegetation cover, exposed soil, and canopy height only when the ground plane is reliable. Modality B (walk around about 1 m of row) reports mean and max canopy height, apparent width, apparent volume in m³ per linear meter, and a vertical distribution histogram.
+
 The `imu.csv` file contains timestamps, linear acceleration readings and angular rotation readings. The first line is a header. The meaning of the fields are:
 
 | Field | <div style="width: 500px">Meaning</div> |

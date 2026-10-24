@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24B9204E08E8610D3CB4F2CB /* Pods_StrayScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC054EDDA47FB8A717AA671 /* Pods_StrayScanner.framework */; };
+		AA1000100000000000000A /* CaptureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000020000000000000002 /* CaptureModels.swift */; };
+		AA1000110000000000000A /* CanopyMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000030000000000000003 /* CanopyMath.swift */; };
+		AA1000120000000000000A /* CanopyAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000040000000000000004 /* CanopyAnalyzer.swift */; };
+		AA1000130000000000000A /* ReportFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000050000000000000005 /* ReportFiles.swift */; };
+		AA1000140000000000000A /* CaptureAssessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000060000000000000006 /* CaptureAssessor.swift */; };
+		AA1000150000000000000A /* CaptureWarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000070000000000000007 /* CaptureWarnings.swift */; };
+		AA1000160000000000000A /* CanopySelfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000080000000000000008 /* CanopySelfTest.swift */; };
+		AA1000200000000000000B /* CaptureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000020000000000000002 /* CaptureModels.swift */; };
+		AA1000210000000000000B /* CanopyMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000030000000000000003 /* CanopyMath.swift */; };
+		AA1000220000000000000B /* CanopyAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000040000000000000004 /* CanopyAnalyzer.swift */; };
+		AA1000230000000000000B /* ReportFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000050000000000000005 /* ReportFiles.swift */; };
+		AA1000240000000000000B /* CaptureAssessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000060000000000000006 /* CaptureAssessor.swift */; };
+		AA1000250000000000000B /* CaptureWarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000070000000000000007 /* CaptureWarnings.swift */; };
+		AA1000260000000000000B /* CanopySelfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000080000000000000008 /* CanopySelfTest.swift */; };
 		38045D582561A7370004F23C /* SessionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38045D572561A7370004F23C /* SessionRow.swift */; };
 		38045D5A2561AC000004F23C /* SessionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38045D592561AC000004F23C /* SessionList.swift */; };
 		3807420B27BBCE83003194C1 /* PngEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3807420A27BBCE83003194C1 /* PngEncoder.mm */; };
@@ -34,7 +47,6 @@
 		3863FE6C25FCBB0E00C1DA4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385999BE25616F2B00F3F681 /* SceneDelegate.swift */; };
 		3863FE6E25FCBB0E00C1DA4F /* Recording+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C17B11259BE1DA006B3FDA /* Recording+CoreDataProperties.swift */; };
 		3863FE6F25FCBB0E00C1DA4F /* Recording+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C17B10259BE1DA006B3FDA /* Recording+CoreDataClass.swift */; };
-		3863FE7425FCBB0E00C1DA4F /* Pods_StrayScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC054EDDA47FB8A717AA671 /* Pods_StrayScanner.framework */; };
 		3863FE7625FCBB0E00C1DA4F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3872B88825962BBA00A3370C /* Colors.xcassets */; };
 		3863FE7725FCBB0E00C1DA4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385999CA25616F3000F3F681 /* LaunchScreen.storyboard */; };
 		3863FE7825FCBB0E00C1DA4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385999C825616F3000F3F681 /* Preview Assets.xcassets */; };
@@ -83,7 +95,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09A6D95A8151C51C3ECF4131 /* Pods-StrayScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrayScanner.release.xcconfig"; path = "Target Support Files/Pods-StrayScanner/Pods-StrayScanner.release.xcconfig"; sourceTree = "<group>"; };
+		AA1000020000000000000002 /* CaptureModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureModels.swift; sourceTree = "<group>"; };
+		AA1000030000000000000003 /* CanopyMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanopyMath.swift; sourceTree = "<group>"; };
+		AA1000040000000000000004 /* CanopyAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanopyAnalyzer.swift; sourceTree = "<group>"; };
+		AA1000050000000000000005 /* ReportFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFiles.swift; sourceTree = "<group>"; };
+		AA1000060000000000000006 /* CaptureAssessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureAssessor.swift; sourceTree = "<group>"; };
+		AA1000070000000000000007 /* CaptureWarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureWarnings.swift; sourceTree = "<group>"; };
+		AA1000080000000000000008 /* CanopySelfTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanopySelfTest.swift; sourceTree = "<group>"; };
 		38045D572561A7370004F23C /* SessionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRow.swift; sourceTree = "<group>"; };
 		38045D592561AC000004F23C /* SessionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionList.swift; sourceTree = "<group>"; };
 		3807420A27BBCE83003194C1 /* PngEncoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PngEncoder.mm; sourceTree = "<group>"; };
@@ -125,8 +143,6 @@
 		38FB731F2573EABB007D9CB0 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		38FB73242573ECE2007D9CB0 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BridgeHeader.h; path = StrayScanner/BridgeHeader.h; sourceTree = "<group>"; };
 		709259182E0B79AB00A7B62E /* ShareUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUtility.swift; sourceTree = "<group>"; };
-		AC52749A3B5AED09C9753120 /* Pods-StrayScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrayScanner.debug.xcconfig"; path = "Target Support Files/Pods-StrayScanner/Pods-StrayScanner.debug.xcconfig"; sourceTree = "<group>"; };
-		DBC054EDDA47FB8A717AA671 /* Pods_StrayScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrayScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24B9204E08E8610D3CB4F2CB /* Pods_StrayScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +157,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3863FE7425FCBB0E00C1DA4F /* Pods_StrayScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,15 +170,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0905A155A958CE7B22575DF5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AC52749A3B5AED09C9753120 /* Pods-StrayScanner.debug.xcconfig */,
-				09A6D95A8151C51C3ECF4131 /* Pods-StrayScanner.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		38045D502561A4C80004F23C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +207,6 @@
 				385999BB25616F2B00F3F681 /* StrayScanner */,
 				387B577F25EA5BB900132903 /* StrayScannerTests */,
 				385999BA25616F2B00F3F681 /* Products */,
-				0905A155A958CE7B22575DF5 /* Pods */,
 				41382767AE5D9ABDCEFAD16D /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -217,9 +221,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AA1000010000000000000001 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				AA1000020000000000000002 /* CaptureModels.swift */,
+				AA1000030000000000000003 /* CanopyMath.swift */,
+				AA1000040000000000000004 /* CanopyAnalyzer.swift */,
+				AA1000050000000000000005 /* ReportFiles.swift */,
+				AA1000060000000000000006 /* CaptureAssessor.swift */,
+				AA1000070000000000000007 /* CaptureWarnings.swift */,
+				AA1000080000000000000008 /* CanopySelfTest.swift */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
 		385999BB25616F2B00F3F681 /* StrayScanner */ = {
 			isa = PBXGroup;
 			children = (
+				AA1000010000000000000001 /* Analysis */,
 				38694C6B26D2C66F00546EA1 /* Helpers */,
 				387B576825EA55AC00132903 /* CCode */,
 				38C17AE4259BCD16006B3FDA /* UI */,
@@ -313,7 +332,6 @@
 		41382767AE5D9ABDCEFAD16D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DBC054EDDA47FB8A717AA671 /* Pods_StrayScanner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -325,7 +343,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 385999DB25616F3100F3F681 /* Build configuration list for PBXNativeTarget "StrayScanner" */;
 			buildPhases = (
-				4DB8A597843EA39DA438F658 /* [CP] Check Pods Manifest.lock */,
 				385999B525616F2A00F3F681 /* Sources */,
 				385999B625616F2A00F3F681 /* Frameworks */,
 				385999B725616F2A00F3F681 /* Resources */,
@@ -343,7 +360,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3863FE7B25FCBB0E00C1DA4F /* Build configuration list for PBXNativeTarget "StrayScanner debug" */;
 			buildPhases = (
-				3863FE5B25FCBB0E00C1DA4F /* [CP] Check Pods Manifest.lock */,
 				3863FE5C25FCBB0E00C1DA4F /* Sources */,
 				3863FE7325FCBB0E00C1DA4F /* Frameworks */,
 				3863FE7525FCBB0E00C1DA4F /* Resources */,
@@ -397,9 +413,10 @@
 			};
 			buildConfigurationList = 385999B425616F2A00F3F681 /* Build configuration list for PBXProject "StrayScanner" */;
 			compatibilityVersion = "Xcode 11.4";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				"pt-BR",
 				en,
 				Base,
 			);
@@ -449,58 +466,19 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3863FE5B25FCBB0E00C1DA4F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StrayScanner-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4DB8A597843EA39DA438F658 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StrayScanner-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		385999B525616F2A00F3F681 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1000100000000000000A /* CaptureModels.swift in Sources */,
+				AA1000110000000000000A /* CanopyMath.swift in Sources */,
+				AA1000120000000000000A /* CanopyAnalyzer.swift in Sources */,
+				AA1000130000000000000A /* ReportFiles.swift in Sources */,
+				AA1000140000000000000A /* CaptureAssessor.swift in Sources */,
+				AA1000150000000000000A /* CaptureWarnings.swift in Sources */,
+				AA1000160000000000000A /* CanopySelfTest.swift in Sources */,
 				387B57C225EC065600132903 /* InformationView.swift in Sources */,
 				38E969CB2572608E00054CC4 /* NewSession.swift in Sources */,
 				3807420F27BBCF2D003194C1 /* lodepng.cpp in Sources */,
@@ -533,6 +511,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1000200000000000000B /* CaptureModels.swift in Sources */,
+				AA1000210000000000000B /* CanopyMath.swift in Sources */,
+				AA1000220000000000000B /* CanopyAnalyzer.swift in Sources */,
+				AA1000230000000000000B /* ReportFiles.swift in Sources */,
+				AA1000240000000000000B /* CaptureAssessor.swift in Sources */,
+				AA1000250000000000000B /* CaptureWarnings.swift in Sources */,
+				AA1000260000000000000B /* CanopySelfTest.swift in Sources */,
 				3863FE5E25FCBB0E00C1DA4F /* InformationView.swift in Sources */,
 				3863FE5F25FCBB0E00C1DA4F /* NewSession.swift in Sources */,
 				3807421127BBD77B003194C1 /* lodepng.cpp in Sources */,
@@ -642,7 +627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -698,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -711,23 +696,21 @@
 		};
 		385999DC25616F3100F3F681 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC52749A3B5AED09C9753120 /* Pods-StrayScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrayScanner/Preview Content\"";
-				DEVELOPMENT_TEAM = 994C2WLGU3;
-				ENABLE_PREVIEWS = YES;
+					ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StrayScanner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.keke.StrayScanner;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faleagro.lidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = StrayScanner/BridgeHeader.h;
@@ -738,23 +721,21 @@
 		};
 		385999DD25616F3100F3F681 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09A6D95A8151C51C3ECF4131 /* Pods-StrayScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrayScanner/Preview Content\"";
-				DEVELOPMENT_TEAM = 994C2WLGU3;
-				ENABLE_PREVIEWS = YES;
+					ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StrayScanner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.keke.StrayScanner;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faleagro.lidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = StrayScanner/BridgeHeader.h;
@@ -765,22 +746,20 @@
 		};
 		3863FE7C25FCBB0E00C1DA4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC52749A3B5AED09C9753120 /* Pods-StrayScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StrayScanner/Preview Content\"";
-				DEVELOPMENT_TEAM = 994C2WLGU3;
-				ENABLE_PREVIEWS = YES;
+					ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "StrayScanner/Info-debug.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.keke.StrayScannerDebug;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faleagro.lidar.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = StrayScanner/BridgeHeader.h;
@@ -791,22 +770,20 @@
 		};
 		3863FE7D25FCBB0E00C1DA4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09A6D95A8151C51C3ECF4131 /* Pods-StrayScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StrayScanner/Preview Content\"";
-				DEVELOPMENT_TEAM = 994C2WLGU3;
-				ENABLE_PREVIEWS = YES;
+					ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "StrayScanner/Info-debug.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.keke.StrayScannerDebug;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faleagro.lidar.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = StrayScanner/BridgeHeader.h;
@@ -822,15 +799,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QREBG9C6Y;
-				INFOPLIST_FILE = StrayScannerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+					INFOPLIST_FILE = StrayScannerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.keke.StrayScannerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faleagro.lidar.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -846,15 +822,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QREBG9C6Y;
-				INFOPLIST_FILE = StrayScannerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+					INFOPLIST_FILE = StrayScannerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.keke.StrayScannerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faleagro.lidar.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";

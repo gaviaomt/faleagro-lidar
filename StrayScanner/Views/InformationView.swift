@@ -1,95 +1,67 @@
 //
 //  InformationView.swift
-//  StrayScanner
-//
-//  Created by Kenneth Blomqvist on 2/28/21.
-//  Copyright © 2021 Stray Robots. All rights reserved.
+//  FaleAgro LiDAR
 //
 
 import SwiftUI
 
 struct InformationView: View {
-    let paddingLeftRight: CGFloat = 15
-    let paddingTextTop: CGFloat = 10
     var body: some View {
-        ZStack {
-            Color("BackgroundColor").ignoresSafeArea()
+        NavigationStack {
             ScrollView {
-            VStack(alignment: .leading) {
-                Text("About This App").font(.title)
-                    .fontWeight(.bold)
-                Group {
-                bodyText("""
-This app lets you record video and depth datasets using the camera and LIDAR scanner.
+                VStack(alignment: .leading, spacing: 14) {
+                    secao("Para que serve", """
+Este protótipo mede a estrutura do dossel da soja com a câmera e o LiDAR do iPhone. Funciona sem internet. Os arquivos ficam neste aparelho.
 """)
-
-                heading("Transfering Datasets To Your Desktop Computer")
-                
-                bodyText("""
-The recorded datasets can be exported in several ways:
-
-1. Share directly from the app: Tap the "Share" button inside any recording to export it as a ZIP archive via AirDrop, email, or save to Files.
-
-2. Connect your device with the lightning cable:
-   • On Mac, access files through Finder sidebar > your device > "Files" tab > Stray Scanner
-   • On Windows, access files through iTunes
-   • Drag folders to your desired location (one folder per dataset)
-
-3. Use the Files app: Browse > On My iPhone > Stray Scanner, then export to another app or iCloud drive.
+                    secao("O que ele não faz", """
+Não calcula biomassa, peso, produtividade nem adubo. Não foi calibrado com balança ou laboratório. Não conta folha por folha.
 """)
-}
-                Group {
-                heading("Source Code")
-                bodyText("This app is open source. You can find the source code behind the link below. The Github project also contains documentation and links to other related projects.")
-                    
-                bodyText("To report bugs, please open an issue on the Github project. Contributions are more than welcome.")
-                    
-                link(text: "Github project", destination:
-                    "https://github.com/StrayRobots/scanner")
+                    secao("Antes de gravar", """
+Preencha fazenda, talhão, variedade, data de plantio, tratamento e o ponto de 1 a 5. Escolha uma modalidade:
 
+A · Inferior — celular perto do chão, câmera para cima. Mede a abertura (céu visível) e o fechamento.
+
+B · Lateral 3D — ande devagar ao redor de cerca de 1 m de linha. Mede altura, largura aparente, volume aparente e a distribuição vertical.
+
+C · Superior — câmera para baixo, acima da copa. Mede cobertura de vegetação, solo exposto e, se o chão ficar confiável, a altura.
+""")
+                    secao("Avisos na tela", """
+Muito rápido: ande ou segure mais devagar.
+Rastreamento perdido ou limitado: aponte para plantas e chão, sem virar de repente.
+Profundidade com confiança baixa: chegue um pouco mais perto e evite reflexo forte no sensor.
+Área incompleta: a modalidade ainda não viu o bastante (tempo parado nas vistas de cima e de baixo, ou a volta de 1 m na vista lateral).
+Referência de escala: é só uma caixa que você marca. O app não acha a referência sozinho.
+""")
+                    secao("Confiança", """
+Cada número tem confiança alta, média ou baixa. Confiança baixa quer dizer que o número pode oscilar. Se o chão não ficou confiável, a altura não aparece — o app não inventa o centímetro.
+""")
+                    secao("O LiDAR deste iPhone", """
+O sensor não separa folha individual nem haste fina. A altura é a superfície aparente da copa. O volume aparente inclui o ar entre as folhas e vem em metros cúbicos por metro de linha. Sombra forte e sol estourado mudam a cobertura e a abertura, porque elas usam a cor verde junto com a profundidade.
+""")
+                    secao("Exportar", """
+Em cada medição, Exportar JSON e PLY monta um arquivo com metricas.json, nuvem.ply e a captura bruta (vídeo, mapas de profundidade, confiança, pose e horários). Dá para enviar pelo compartilhamento do iPhone. Também dá para copiar a pasta pelo cabo, no Finder do Mac, em Arquivos do aparelho.
+""")
+                    secao("Créditos", """
+A captura bruta vem do Stray Scanner, de Stray Robots, licença MIT. O FaleAgro LiDAR é um protótipo em cima desse código.
+""")
                 }
-                Group {
-                heading("Disclaimer")
-                bodyText("This application is provided as is.\nIn no event shall the authors or copyright holders be liable for any claim, damages or other liability arising from using, or in connection with using the software.")
-                Spacer()
-                }
-            }.padding(.all, paddingLeftRight)
+                .padding(18)
             }
-            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        
+            .background(Color("BackgroundColor").ignoresSafeArea())
+            .navigationTitle("Sobre")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
-    
-    private func heading(_ text: String) -> some View {
-        Text(text)
-            .font(.title3)
-            .fontWeight(.bold)
-            .padding(.top, 20)
-    }
-    
-    private func bodyText(_ text: String) -> some View {
-        Text(text)
-            .font(.body)
-            .multilineTextAlignment(.leading)
-            .lineSpacing(1.25)
-            .padding(.top, paddingTextTop)
-    }
-    
-    private func link(text: String, destination: String) -> some View {
-        Text(text)
-            .font(.body)
-            .foregroundColor(Color.blue)
-            .padding(.top, paddingTextTop)
-            .onTapGesture {
-                let url = URL.init(string: destination)
-                guard let destinationUrl = url else { return }
-                UIApplication.shared.open(destinationUrl)
-            }
-    }
-}
 
-struct InformationView_Previews: PreviewProvider {
-    static var previews: some View {
-        InformationView()
+    private func secao(_ titulo: String, _ texto: String) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(titulo)
+                .font(.title3.weight(.bold))
+                .foregroundColor(Color("TextColor"))
+            Text(texto)
+                .font(.body)
+                .foregroundColor(Color("TextColor"))
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
 }
