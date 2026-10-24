@@ -1,13 +1,10 @@
 //
 //  SessionList.swift
-//  Stray Scanner
-//
-//  Created by Kenneth Blomqvist on 11/15/20.
-//  Copyright © 2020 Stray Robots. All rights reserved.
+//  FaleAgro LiDAR
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 class SessionListViewModel: ObservableObject {
     private var dataContext: NSManagedObjectContext?
@@ -16,7 +13,6 @@ class SessionListViewModel: ObservableObject {
     init() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         dataContext = appDelegate.persistentContainer.viewContext
-        self.sessions = []
         NotificationCenter.default.addObserver(self, selector: #selector(sessionsChanged), name: NSNotification.Name("sessionsChanged"), object: nil)
     }
 
@@ -28,20 +24,16 @@ class SessionListViewModel: ObservableObject {
         let request = NSFetchRequest<NSManagedObject>(entityName: "Recording")
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
         do {
-            let fetched: [NSManagedObject] = try dataContext?.fetch(request) ?? []
-            sessions = fetched.map { session in
-                return session as! Recording
-            }
-
-        } catch let error as NSError {
-            print("Something went wrong. Error: \(error), \(error.userInfo)")
+            let fetched = try dataContext?.fetch(request) ?? []
+            sessions = fetched.compactMap { $0 as? Recording }
+        } catch {
+            print("Could not fetch sessions. \(error.localizedDescription)")
         }
     }
 
     @objc func sessionsChanged() {
         fetchSessions()
     }
-
 }
 
 struct SessionList: View {
@@ -49,88 +41,73 @@ struct SessionList: View {
     @State private var showingInfo = false
 
     var body: some View {
-        ZStack {
-        Color.black
-        .ignoresSafeArea()
-        NavigationView {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text("Recordings")
-                        .foregroundColor(Color("TextColor"))
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding([.top, .leading], 15.0)
-                    Spacer()
-                    Button(action: {
-                        showingInfo.toggle()
-                    }, label: {
-                        Image(systemName: "info.circle")
-                            .resizable()
-                            .frame(width: 25, height: 25, alignment: .center)
-                            .padding(.top, 17)
-                            .padding(.trailing, 20)
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("FaleAgro LiDAR")
+                            .font(.largeTitle.weight(.bold))
                             .foregroundColor(Color("TextColor"))
-                    }).sheet(isPresented: $showingInfo) {
-                        InformationView()
+                        Text("Estrutura do dossel · protótipo 1")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
                     }
+                    Spacer()
+                    Button(action: { showingInfo = true }) {
+                        Image(systemName: "info.circle")
+                            .font(.title2)
+                            .foregroundColor(Color("TextColor"))
+                    }
+                    .padding(.top, 8)
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+                .padding(.bottom, 8)
 
-                if !viewModel.sessions.isEmpty {
+                if viewModel.sessions.isEmpty {
+                    Spacer()
+                    Text("Nenhuma medição ainda.\nToque em Nova medição, preencha a ficha e grave no talhão.")
+                        .font(.body)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color("TextColor"))
+                        .padding(.horizontal, 32)
+                    Spacer()
+                } else {
                     List {
-                        ForEach(Array(viewModel.sessions.enumerated()), id: \.element) { i, recording in
+                        ForEach(viewModel.sessions) { recording in
                             NavigationLink(destination: SessionDetailView(recording: recording)) {
                                 SessionRow(session: recording)
                             }
+                            .listRowBackground(Color("BackgroundColor"))
                         }
                     }
+                    .listStyle(.plain)
                     .scrollContentBackground(.hidden)
-                    Spacer()
-                } else {
-                    Spacer()
-                    Text("No recorded sessions. Record one, and it will appear here.")
-                        .font(.body)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 50.0)
                 }
-                HStack {
-                    Spacer()
-                    NavigationLink(destination: NewSessionView(), label: {
-                        Text("Record new session")
-                            .font(.title3)
-                            .padding(20)
-                            .background(Color("TextColor"))
-                            .foregroundColor(Color("LightColor"))
-                            .cornerRadius(35)
-                            .padding(20)
-                    })
-                    Spacer()
-                }
-                if (viewModel.sessions.isEmpty) {
-                    Spacer()
+
+                NavigationLink(destination: NewSessionView()) {
+                    Text("Nova medição")
+                        .font(.title3.weight(.semibold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(Color(red: 0.12, green: 0.38, blue: 0.18))
+                        .foregroundColor(.white)
+                        .cornerRadius(18)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
                 }
             }
-            .navigationBarHidden(true)
             .background(Color("BackgroundColor").ignoresSafeArea())
+            .toolbar(.hidden, for: .navigationBar)
+            .sheet(isPresented: $showingInfo) {
+                InformationView()
+            }
             .onAppear {
-                DispatchQueue.main.async {
-                    viewModel.fetchSessions()
-                }
-                FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).forEach({ url in
-                    let relative = url.relativeString
-                    print("relative url: \(relative)")
-                })
-                let delegate = UIApplication.shared.delegate as! AppDelegate
-                delegate.appDaemon?.removeDeletedEntries()
+                viewModel.fetchSessions()
+                let delegate = UIApplication.shared.delegate as? AppDelegate
+                delegate?.appDaemon?.removeDeletedEntries()
+            }
         }
-        }
-        .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
-        }
-    }
-}
-
-struct SessionList_Previews: PreviewProvider {
-    static var previews: some View {
-        SessionList()
+        .environment(\.locale, Locale(identifier: "pt_BR"))
     }
 }

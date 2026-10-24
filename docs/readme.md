@@ -1,3 +1,5 @@
+O guia para instalar o FaleAgro LiDAR no iPhone está no [README principal](../README.md), em português.
+
 ![Stray Toolkit](/images/stray-logo.png)
 # Stray Scanner
 

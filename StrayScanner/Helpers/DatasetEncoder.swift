@@ -20,7 +20,7 @@ class DatasetEncoder {
     private let rgbEncoder: VideoEncoder
     private let depthEncoder: DepthEncoder
     private let confidenceEncoder: ConfidenceEncoder
-    private let datasetDirectory: URL
+    let datasetDirectory: URL
     private let odometryEncoder: OdometryEncoder
     private let imuEncoder: IMUEncoder
     private let distortionEncoder: DistortionEncoder
